@@ -1,0 +1,9 @@
+Building Lizarde
+
+See doc/readme-qt.rst for instructions on building Lizarde QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Lizarde.
+
+See doc/build-*.txt for instructions on building Lizarded,
+the intended-for-services, no-graphical-interface, reference
+implementation of Lizarde.
