@@ -44,7 +44,7 @@ unsigned int nStakeMinAge = 60 * 60 * 24 * 3;	// minimum age for coin age:  3d
 unsigned int nStakeMaxAge = -1;	// stake age of full weight:  unlimited
 unsigned int nStakeTargetSpacing = 60;			// 60 sec block spacing
 
-int64 nChainStartTime = 1405333141;
+int64 nChainStartTime = 1405402411;
 int nCoinbaseMaturity = 40;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2525,7 +2525,7 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
 
         // Genesis block
-        const char* pszTimestamp = "Lizarde 7/14/2014";
+        const char* pszTimestamp = "Relaunch 7/15/2014";
         CTransaction txNew;
         txNew.nTime = nChainStartTime;
         txNew.vin.resize(1);
@@ -2538,11 +2538,11 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1405333141;
+        block.nTime    = 1405402411;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 881943;
+        block.nNonce   = 277771;
 
-        if (false && (block.GetHash() != hashGenesisBlock)) {
+        if (true && (block.GetHash() != hashGenesisBlock)) {
 
         // This will figure out a valid hash and Nonce if you're
         // creating a different genesis block:
@@ -2565,7 +2565,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
 
-        assert(block.hashMerkleRoot == uint256("0x7d2a843c83944ab903fdec6ed2dbe6222e99770071f46f40ad481a54e5703136"));
+        assert(block.hashMerkleRoot == uint256("0xd7ddea96a0158b294fe5c46ec28fc5ff75a641f366409ee2077be525077ca6a5"));
 		assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
 
         // Start new block file
@@ -2843,7 +2843,7 @@ bool static AlreadyHave(CTxDB& txdb, const CInv& inv)
 // The message start string is designed to be unlikely to occur in normal data.
 // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 // a large 4-byte int at any alignment.
-unsigned char pchMessageStart[4] = { 0x71, 0x32, 0x23, 0x04 };
+unsigned char pchMessageStart[4] = { 0x26, 0x37, 0x48, 0x59 };
 
 bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
 {
